@@ -3,4 +3,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    border: 1px solid black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+/* Element Selectors */
+
+body {
+    background-color: slategray;
+}
+
+p {
+    color: white;
+    font-size: 20px;
+}
+/* Class Selectors */
