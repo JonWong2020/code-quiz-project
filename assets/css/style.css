@@ -17,4 +17,19 @@ p {
     color: white;
     font-size: 20px;
 }
+
+button {
+    outline: none;
+    background-color: slategray;
+    color: white;
+    font-size: 20px;
+}
 /* Class Selectors */
+
+.outer-container {
+    padding: 10px;
+}
+
+.top-bar p {
+    float: right;
+}
