@@ -20,11 +20,47 @@
 
             <!-- main head w/quiz intro -->
             <header class="quiz-intro">
-
+              <h1>Welcome to the quiz!</h1>
+              <p>You will have 15 minutes to complete the quiz.  
+                Each wrong answer will subtract time.  Once the quiz is complete or 
+                the timer hits 0, your score will be recorded in the highscores area.
+                To start the quiz, click the start button below. 
+              </p>
+              <button>Start Quiz!</button>
             </header>
 
             <!-- main quiz section -->
             <main>
+              <section class="question-section">
+                <h2>Question</h2>
+                <ul>
+                  <li><button>Answer 1</button></li>
+                  <li><button>Answer 2</button></li>
+                  <li><button>Answer 3</button></li>
+                  <li><button>Answer 4</button></li>
+                </ul>
+              </section>
+
+              <section class="quiz-finish-section">
+                <h2>Quiz Complete!</h2>
+                <p>Your Score: 00</p>
+
+                <div>
+                  <label for="">Enter initials:</label>
+                  <input type="text">
+                  <button>Submit</button>
+                </div>
+              </section>
+
+              <section class="highscores-screen">
+                <h2>Highscores:</h2>
+                <ol>
+                  <li>HS 1</li>
+                  <li>HS 2</li>
+                </ol>
+                <button>Go Back</button>
+                <button>Clear Highscores</button>
+              </section>
                 
             </main>
         </div>
