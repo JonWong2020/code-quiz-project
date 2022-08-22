@@ -14,6 +14,9 @@ var initialsEntry = scoreEntry.querySelector("input");
 var highscoresScreen = document.querySelector(".highscores-screen");
 var viewHighScoresButton = topBar.querySelector("button");
 
+// Other variables
+var quizWin = false
+
 // Display questions
 var quizQuestions = [
     {
@@ -48,28 +51,45 @@ var quizQuestions = [
     }
 ]
 
+// Quiz start
+function startQuiz() {
+    quizWin = false;
+    timerCount = 60;
+    startQuizButton.disabled = true
+    startTimer();
+    return;
+}
+
+// Quiz Complete function
+function quizComplete() {
+    quizIntro.setAttribute("style", "display: none");
+    questionSection.setAttribute("style", "display:none")
+    quizFinish.setAttribute("style", "display:block");
+}
+
 // Timer function
 function startTimer() {
-    timerCount = 60;
 
     var quizTimer = setInterval(function() {
         timerCount--
         timerDisplay.textContent = timerCount
-
-        if (timerCount === 00) {
+        if (timerCount >= 0) {
+            if (quizWin && timerCount > 0) {
+                clearInterval(quizTimer);
+                quizComplete();
+            }
+        }
+        if (timerCount === 0) {
             clearInterval(quizTimer);
+            quizComplete();
         }
     }, 1000);
 }
 
 // Display quiz
-function displayQuiz()
+// function displayQuiz()
 
-// Quiz start
-function startQuiz() {
-    startTimer();
-    return;
-}
+
 
 // Event listeners
 startQuizButton.addEventListener("click", startQuiz);
