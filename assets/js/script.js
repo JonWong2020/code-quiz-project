@@ -57,14 +57,26 @@ function startQuiz() {
     timerCount = 60;
     startQuizButton.disabled = true
     startTimer();
+    displayQuiz();
     return;
 }
+
+// Display quiz
+function displayQuiz() {
+    quizIntro.setAttribute("style", "display: none");
+    questionSection.setAttribute("style", "display:block");
+}
+
+
 
 // Quiz Complete function
 function quizComplete() {
     quizIntro.setAttribute("style", "display: none");
-    questionSection.setAttribute("style", "display:none")
+    questionSection.setAttribute("style", "display:none");
     quizFinish.setAttribute("style", "display:block");
+    if (initialsEntry = "" && scoreSubmitButton.addEventListener("click")) {
+        alert("Please enter your initials");
+    }
 }
 
 // Timer function
@@ -85,11 +97,6 @@ function startTimer() {
         }
     }, 1000);
 }
-
-// Display quiz
-// function displayQuiz()
-
-
 
 // Event listeners
 startQuizButton.addEventListener("click", startQuiz);
