@@ -32,6 +32,10 @@ button {
     font-size: 20px;
 }
 
+button:hover {
+    background-color: green;
+}
+
 h1, h2 {
     color: rgb(0, 255, 106);
     text-align: center;
