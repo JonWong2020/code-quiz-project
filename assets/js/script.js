@@ -10,7 +10,7 @@ var quizFinish = document.querySelector(".quiz-finish-section");
 var main = document.querySelector("main");
 var scoreEntry = document.querySelector("#score-entry");
 var scoreSubmitButton = scoreEntry.querySelector("button");
-var initialsEntry = scoreEntry.querySelector("input").value;
+var initialsEntry = scoreEntry.querySelector("#initials");
 var viewHighScoresScreen = document.querySelector(".highscores-screen");
 var viewHighScoresButton = topBar.querySelector("button");
 var returnButton = viewHighScoresScreen.querySelector("#return-button");
@@ -22,7 +22,7 @@ var finalScore = quizFinish.querySelector("#final-score")
 
 // var quizWin = false;
 var questionIndex = 0;
-var timeLeft = 61;
+var timeLeft = 46;
 var holdInterval = 0;
 var penalty = 10;
 var score = 0;
@@ -32,32 +32,32 @@ var quizQuestions = [
     {
         question: "Which of the following is an example of an array?",
         answers: [
-             "var array = {}",
-             "var array = ()",
-             "var array = <>",
-            "var array = []",
+             "var array = { }",
+             "var array = ( )",
+             "var array = < >",
+            "var array = [ ]",
         ],
-        correctAnswer: "var array = []",
+        correctAnswer: "var array = [ ]",
     },
     {
         question: "Which DOM method is used to create a new HTML element",
         answers: [
-             "document.createElement()",
-             "document.newElement()",
-             "document.element()",
-            "document.spawnElement()",
+             "document.createElement ( )",
+             "document.newElement ( )",
+             "document.element ( )",
+            "document.spawnElement ( )",
         ],
-        correctAnswer: "document.createElement()",
+        correctAnswer: "document.createElement ( )",
     },
     {
         question: "Which operator represents OR statements?",
         answers: [
-            "&&",
-            "||",
-            "==",
-            "()",
+            "& &",
+            "| |",
+            "= =",
+            "( )",
         ],
-        correctAnswer: "||",
+        correctAnswer: "| |",
     },
     {
         question: "What does CSS stand for?",
@@ -95,14 +95,6 @@ startQuizButton.addEventListener("click", function startTimer() {
     }
     displayQuiz();
 });
-
-// function startQuiz() {
-//     // quizWin = false;
-//     // timerCount = 15;
-//     startTimer();
-//     displayQuiz();
-//     return;
-// }
 
 // Display quiz
 function displayQuiz() {
@@ -165,7 +157,36 @@ function quizComplete() {
   
 }
 
+// Logging scores on submit
+scoreSubmitButton.addEventListener("click", function() {
+    
+    initialsEntry.textContent = "";
 
+    var initials = initialsEntry.value;
+
+    if (initials === null) {
+
+        console.log("No value logged!");
+
+    } else {
+        var finalScore = {
+            initials: initials,
+            score: timeLeft
+        }
+        console.log(finalScore);
+        var allScores = localStorage.getItem("allScores");
+        if (allScores === null) {
+            allScores = [];
+        } else {
+            allScores = JSON.parse(allScores);
+        }
+        allScores.push(finalScore);
+        var newScore = JSON.stringify(allScores);
+        localStorage.setItem("allScores", newScore);
+        
+        displayHighScores();
+    }
+});
 
 // View highscores section
 function displayHighScores() {
@@ -178,4 +199,3 @@ function displayHighScores() {
 // Event listeners
 viewHighScoresButton.addEventListener("click", displayHighScores);
 returnButton.addEventListener("click", displayIntro);
-// scoreSubmitButton.addEventListener("click", addHighScore);
