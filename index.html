@@ -33,12 +33,8 @@
             <main>
               <!-- Question section; questions & answers thru JS -->
               <section class="question-section">
-                <h2>Question</h2>
-                <ul>
-                  <li><button>Answer 1</button></li>
-                  <li><button>Answer 2</button></li>
-                  <li><button>Answer 3</button></li>
-                  <li><button>Answer 4</button></li>
+                <h2 id="question-head">Question</h2>
+                <ul id="choices">
                 </ul>
               </section>
               <!-- Quiz complete section -->
@@ -50,6 +46,7 @@
                   <label for="">Enter initials:</label>
                   <input type="text">
                   <button>Submit</button>
+                  <button id="return-button">Return to start</button>
                 </div>
               </section>
               <!-- Highscores section -->
@@ -59,7 +56,7 @@
                   <li>HS 1</li>
                   <li>HS 2</li>
                 </ol>
-                <button id="returnbutton">Go Back</button>
+                <button id="return-button">Go Back</button>
                 <button id="reset-hs">Clear Highscores</button>
               </section>
                 
