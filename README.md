@@ -6,7 +6,7 @@ A code quiz which utilizes HTML, CSS, and JavaScript.  The quiz is able to provi
 
 ## Links
 
-Live Site:  
+Live Site:  https://jonwong2020.github.io/code-quiz-project/
 
 Repo:  https://github.com/JonWong2020/code-quiz-project
 
