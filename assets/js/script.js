@@ -7,7 +7,6 @@ var topBar = document.querySelector(".top-bar");
 var timerDisplay = topBar.querySelector("p");
 var answerSection = document.querySelector("ul");
 var quizFinish = document.querySelector(".quiz-finish-section");
-var main = document.querySelector("main");
 var scoreEntry = document.querySelector("#score-entry");
 var scoreSubmitButton = scoreEntry.querySelector("button");
 var initialsEntry = scoreEntry.querySelector("#initials");
@@ -21,7 +20,6 @@ var resetHighScores = document.querySelector("#reset-hs");
 
 // Other variables
 
-// var quizWin = false;
 var questionIndex = 0;
 var timeLeft = 46;
 var holdInterval = 0;
@@ -72,7 +70,7 @@ var quizQuestions = [
     },
 ];
 
-// Display intro
+// Display intro function
 function displayIntro() {
     quizIntro.setAttribute("style", "display: block");
     questionSection.setAttribute("style", "display: none");
@@ -82,7 +80,7 @@ function displayIntro() {
     return;
 }
 
-// Quiz start & Timer function
+// Quiz start & Timer function event
 startQuizButton.addEventListener("click", function startTimer() {
 
     if (holdInterval === 0) {
@@ -99,7 +97,7 @@ startQuizButton.addEventListener("click", function startTimer() {
     displayQuiz();
 });
 
-// Display quiz
+// Display quiz function
 function displayQuiz() {
     quizIntro.setAttribute("style", "display: none");
     questionSection.setAttribute("style", "display: block");
@@ -111,6 +109,7 @@ function displayQuiz() {
         var userChoices = quizQuestions[questionIndex].answers;
         questionHead.textContent = userQuestion;
     }
+
     // New for each for question choices
     userChoices.forEach(function (newItem) {
         
@@ -126,7 +125,7 @@ function displayQuiz() {
 // Check answers function
 function compare(event) {
     var element = event.target;
-
+    // Records score and applies time penalty 
     if (element.matches("li")) {
         if (element.textContent == quizQuestions[questionIndex].correctAnswer) {
             score++;
@@ -136,7 +135,7 @@ function compare(event) {
     };
 
     questionIndex++;
-
+    // Check if quiz finished or not
     if (questionIndex >= quizQuestions.length) {
         quizComplete();
     } else {
@@ -160,9 +159,8 @@ function quizComplete() {
   
 }
 
-// Logging scores on submit
+// Logging scores on submit event
 scoreSubmitButton.addEventListener("click", function() {
-    
     initialsEntry.textContent = "";
 
     var initials = initialsEntry.value;
@@ -191,7 +189,7 @@ scoreSubmitButton.addEventListener("click", function() {
     }
 });
 
-// View highscores section
+// View highscores section function
 function displayHighScores() {
     quizIntro.setAttribute("style", "display: none");
     questionSection.setAttribute("style", "display: none");
@@ -217,10 +215,7 @@ resetHighScores.addEventListener("click", function() {
     localStorage.clear();
     highScoresList.textContent = ""
 });
-
 }
-
-
 
 // Event listeners
 viewHighScoresButton.addEventListener("click", displayHighScores);
