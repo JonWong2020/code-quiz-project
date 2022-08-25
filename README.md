@@ -12,7 +12,7 @@ Repo:  https://github.com/JonWong2020/code-quiz-project
 
 ## Screenshot(s)
 
-![codequiz](https://user-images.githubusercontent.com/110364895/186545129-e4183c5e-f896-49e0-a346-c714f7d156ee.gif)
+![codequiz](https://user-images.githubusercontent.com/110364895/186546395-2cb97358-a72e-44ef-953e-b4956352fcd6.gif)
 
 ### Intro Screen
 
