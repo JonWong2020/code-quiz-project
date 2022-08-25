@@ -8,11 +8,43 @@ A code quiz which utilizes HTML, CSS, and JavaScript.  The quiz is able to provi
 
 Live Site:  
 
-Repo:  
+Repo:  https://github.com/JonWong2020/code-quiz-project
 
 ## Screenshot(s)
 
+![codequiz](https://user-images.githubusercontent.com/110364895/186545129-e4183c5e-f896-49e0-a346-c714f7d156ee.gif)
 
+### Intro Screen
+
+![quiz1](https://user-images.githubusercontent.com/110364895/186545132-7ddf0571-34b7-44c2-bc6f-98642af39ce4.JPG)
+
+* Intro/Display screen for the quiz
+  *  'View Highscores' button on the top left
+  *  Timer located on the top right corner
+
+### Question/Selection Screen
+
+![quiz2](https://user-images.githubusercontent.com/110364895/186545168-d4d38dbb-90e6-455a-85a1-9ff8d6162b01.JPG)
+
+* Question screen with different selections
+  * Selections will highlight with a green background when hovered over
+  * Clicking on any selection will continue on to the next question
+
+### Results Screen
+
+![quiz3](https://user-images.githubusercontent.com/110364895/186545154-da5cf0ec-b862-4312-808e-057383106145.JPG)
+
+* Results screen where you can input your initials
+  * Clicking the submit button will bring you to the 'view highscores' section
+
+### View Highscores Section
+
+![quiz4](https://user-images.githubusercontent.com/110364895/186545177-e3ace229-bbe2-4e48-9704-8dae826178f6.JPG)
+
+* Section where you can view your highscores
+  * Hovering over a score will also display a green background along with a scroll bar if there is an overflow of scores
+  * Pressing the 'Clear Highscores' button will remove all scores in the list
+  * Pressing the 'Go Back' button will bring you back to the quiz intro screen where you can take the quiz again
 
 ## Credits
 
